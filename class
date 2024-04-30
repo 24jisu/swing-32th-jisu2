@@ -1,0 +1,247 @@
+#include <iostream>
+using namespace std;
+
+class Circle {
+private:
+	double radius;
+
+public:
+	Circle(double r) : radius(r) {
+		cout << "***평면 원 계산기 접속***" << endl << endl;
+
+	}
+
+	~Circle() {
+		cout << "평명 원 계산기 종료,,," << endl << endl;
+
+	}
+
+	double calculateArea() {
+		return radius * radius * 3.14;
+
+	}
+
+	double calculateCircumference() {
+		return 2 * radius * 3.14;
+
+	}
+
+
+};
+
+class cylinder {
+private:
+	double radius;
+	double high;
+
+public:
+	cylinder(double r, double h) : radius(r), high(h) {
+		cout << "***원기둥 계산기 접속***" << endl << endl;
+
+	}
+
+	~cylinder() {
+		cout << "원기둥 계산기 종료,,," << endl << endl;
+
+	}
+
+	double cylinderArea() {
+		return 2 * radius * radius * 3.14 + 2 * 3.14 * radius * high;
+
+	}
+
+	double cylindervolume() {
+		return radius * radius * high * 3.14;
+
+	}
+
+
+};
+
+class cone {
+private:
+	double radius;
+	double high;
+
+public:
+	cone(double r, double h) : radius(r), high(h) {
+		cout << "***원뿔 계산기 접속***" << endl << endl;
+
+	}
+
+	~cone() {
+		cout << "원뿔 계산기 종료,,," << endl << endl;
+
+	}
+
+	double conevolume() {
+		return (1.0 / 3.0) * 3.14 * radius * radius * high;
+
+	}
+
+
+};
+
+
+class sphere {
+private:
+	double radius;
+
+
+public:
+	sphere(double r) : radius(r) {
+		cout << "***구 계산기 접속***" << endl << endl;
+
+	}
+
+	~sphere() {
+		cout << "구 계산기 종료,,," << endl << endl;
+
+	}
+
+	double sphereArea() {
+		return 4 * radius * radius * 3.14;
+
+	}
+
+	double spherevolume() {
+		return (4.0 / 3.0) * 3.14 * radius * radius * radius;
+
+	}
+
+
+};
+
+
+int main() {
+	int answer;
+	double radius;
+	double high;
+
+	while (true) {
+		cout << "\n 원하는 계산을 선택하세요 \n 1. 원의 넓이 계산 \n 2. 원의 둘레 계산 \n 3.원기둥의 부피 계산 \n 4. 원기둥의 겉넓이 계산" << endl;
+		cout << " 5. 원뿔의 부피 계산 \n 6. 구의 부피 계산 \n 7. 구의 겉넓이 계산 \n 8. 종료 \n 선택:";
+		cin >> answer;
+
+		if (answer == 1) {
+
+			cout << "반지름을 입력하세요: ";
+			cin >> radius;
+
+			Circle circle(radius);
+
+			cout << "평면 원의 넓이:" << circle.calculateArea() << endl << endl;
+
+
+
+
+
+		}
+
+		if (answer == 2) {
+
+			cout << "반지름을 입력하세요: ";
+			cin >> radius;
+
+			Circle circle(radius);
+
+			cout << "평면 원의 둘레: " << circle.calculateCircumference() << endl << endl;
+
+
+
+
+
+		}
+
+
+		if (answer == 3) {
+
+			cout << "반지름을 입력하세요: ";
+			cin >> radius;
+			cout << "높이를 입력하세요: ";
+			cin >> high;
+
+
+			cylinder cylinder(radius, high);
+
+			cout << "원기둥의 부피: " << cylinder.cylindervolume() << endl << endl;
+
+
+		}
+
+		if (answer == 4) {
+
+			cout << "반지름을 입력하세요: ";
+			cin >> radius;
+			cout << "높이를 입력하세요: ";
+			cin >> high;
+
+
+			cylinder cylinder(radius, high);
+
+			cout << "원기둥의 겉넓이: " << cylinder.cylinderArea() << endl << endl;
+
+
+		}
+
+
+		if (answer == 5) {
+
+			cout << "반지름을 입력하세요: ";
+			cin >> radius;
+			cout << "높이를 입력하세요: ";
+			cin >> high;
+
+
+			cone cone(radius, high);
+
+			cout << "원뿔의 겉넓이: " << cone.conevolume() << endl << endl;
+
+
+		}
+
+
+		if (answer == 6) {
+
+			cout << "반지름을 입력하세요: ";
+			cin >> radius;
+		
+
+			sphere sphere (radius);
+
+			cout << "구의 부피: " << sphere.spherevolume() << endl << endl;
+
+
+		}
+
+		if (answer == 7) {
+
+			cout << "반지름을 입력하세요: ";
+			cin >> radius;
+
+
+			sphere sphere(radius);
+
+			cout << "구의 부피: " << sphere.sphereArea() << endl << endl;
+
+
+		}
+
+		if (answer == 8) {
+
+			cout << "프로그램을 종료합니다.";
+			break;
+
+		}
+
+		if (answer > 8 or answer < 1) {
+			cout << "잘못된 숫자 입니다";
+
+			continue;
+
+
+		}
+
+	}
+
+}
